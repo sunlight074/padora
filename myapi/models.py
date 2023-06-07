@@ -27,9 +27,10 @@ class EVENT_LOG (models.Model):
 class MANAGE_TICKET (models.Model):
     ticket_id = models.AutoField(primary_key=True)
     category_attack = models.CharField(max_length=36)
-    severity = models.IntegerField()
-    assigne = models.IntegerField()
-    reporter = models.ForeignKey(USERS, on_delete=models.CASCADE)
+    severity_id = models.IntegerField()
+    severity_name = models.CharField(max_length=36)
+    assignee =  models.ForeignKey('USERS', on_delete=models.CASCADE ,related_name="assignee_report")
+    reporter = models.ForeignKey('USERS', on_delete=models.CASCADE,related_name='reporter_report')
     status = models.IntegerField(default=1)
     description = models.CharField(max_length=255)
     create_date = models.DateTimeField(auto_now_add=True)

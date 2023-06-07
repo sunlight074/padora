@@ -14,4 +14,4 @@ class EventLogSerializers (serializers.HyperlinkedModelSerializer):
 class ManageTicketSerializers (serializers.HyperlinkedModelSerializer):
     class Meta:
         model = MANAGE_TICKET
-        fields = ('ticket_id' , 'category_attack' , 'severity' , 'assigne' , 'reporter' , 'status' , 'description' , 'create_date')
+        fields = ('ticket_id' , 'category_attack' , 'severity_id' ,'severity_name', 'assignee' , 'reporter' , 'status' , 'description' , 'create_date')
